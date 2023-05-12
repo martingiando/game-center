@@ -1,13 +1,32 @@
+---
+const { games } = Astro.props
+---
+
 <div
   id='welcome'
   class='text-center flex flex-col justify-center gap-10 h-52 w-fit m-auto'
 >
-  <div class='relative'>
-    <div class='hero relative px-7 py-4'>
+  <div>
+    <div class='hero px-7 py-4'>
       <h1 class='text-5xl font-bold text-white mb-8'>Welcome to GameCenter</h1>
       <p class='text-white text-xl'>
         Here you can play all your favorite 2D Games in one place.
       </p>
+      <div class='mt-10'>
+        {
+          games.map((game: any) => {
+            return (
+              // beautiful pink buttons tailwind
+              <a
+                href={game.url}
+                class='bg-pink-500 hover:bg-pink-700 text-white font-bold py-2 px-4 rounded mt-8'
+              >
+                Play {game.label}
+              </a>
+            )
+          })
+        }
+      </div>
     </div>
   </div>
 </div>

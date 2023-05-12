@@ -1,10 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro'
 import Welcome from '../components/Welcome.astro'
+
+const games = [{ label: 'Tic Tac Toe', href: '/tic-tac-toe/' }]
 ---
 
 <Layout title='Welcome to GameCenter 🚀'>
-  <Welcome />
+  <Welcome games={games} />
 </Layout>
 
 <style>
